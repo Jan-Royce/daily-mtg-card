@@ -1,7 +1,7 @@
 const fetch = require("node-fetch");
 const mongoose = require("mongoose");
 
-const uri = `mongodb+srv://${process.env.MONGODB_USER}:${process.env.MONGODB_PASS}@${process.env.MONGODB_CLUSTER}.ggbwnfv.mongodb.net/mtg?retryWrites=true&w=majority`;
+const uri = process.env.MONGODB_URI;
 const dbName = 'mtg';
 
 const dailyCardSchema = new mongoose.Schema({
