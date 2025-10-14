@@ -13,7 +13,9 @@
         "blobshape": "^1.0.0",
         "bright": "^0.8.5",
         "markdown-to-jsx": "^7.4.5",
+        "mongoose": "^8.19.1",
         "next": "15.5.4",
+        "node-fetch": "^2.7.0",
         "react": "18.3.1",
         "react-dom": "18.3.1",
         "unique-names-generator": "^4.7.1"

@@ -3,14 +3,15 @@ import Link from 'next/link';
 export function Footer() {
     return (
         <footer className="pt-16 pb-12 sm:pt-24 sm:pb-16">
-            <p className="text-sm">
+            By: <span className="text-sm">
                 <Link
-                    href="https://docs.netlify.com/frameworks/next-js/overview/"
+                    href="https://janroyce.dev"
                     className="decoration-dashed text-primary underline-offset-8"
+                    target="_blank"
                 >
-                    Next.js on Netlify
+                    Royce
                 </Link>
-            </p>
+            </span>
         </footer>
     );
 }
