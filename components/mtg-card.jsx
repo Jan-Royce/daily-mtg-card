@@ -1,4 +1,4 @@
-export function MtgCard({ data, className }) {
+export function MtgCard({ data }) {
     return (
         <div className="bg-neutral-200 flex flex-wrap px-6 py-8 rounded-lg">
             <div className="mtg-card w-full sm:w-1/2">

@@ -1,16 +1,16 @@
 const mongoose = require("mongoose");
 
-const uri = process.env.MONGODB_URI;
-const dbName = 'mtg';
-
-const dailyCardSchema = new mongoose.Schema({
-    _id: { type: String },
-    card_data: { type: Object }
-}, { collection: 'daily_card' });
-
-const DailyCard = mongoose.models.DailyCard || mongoose.model("DailyCard", dailyCardSchema);
-
-export async function getCardToday() {
+exports.handler = async function (event, context) {
+    const uri = process.env.MONGODB_URI;
+    const dbName = 'mtg';
+    
+    const dailyCardSchema = new mongoose.Schema({
+        _id: { type: String },
+        card_data: { type: Object }
+    }, { collection: 'daily_card' });
+    
+    const DailyCard = mongoose.models.DailyCard || mongoose.model("DailyCard", dailyCardSchema);
+    
     await mongoose.connect(uri, {
         dbName: dbName
     });
@@ -28,8 +28,14 @@ export async function getCardToday() {
             { upsert: true, new: true, setDefaultsOnInsert: true }
         );
         
-        return card;
+        return {
+            statusCode: 200,
+            body: JSON.stringify(card),
+        };
     }
     
-    return existing;
+    return {
+        statusCode: 200,
+        body: JSON.stringify(existing),
+    };
 }
