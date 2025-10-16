@@ -48,8 +48,6 @@ export function MtgCard({ data }) {
     
     const cardData = data;
     
-    console.log(Object.entries(cardData.card_faces))
-    
     // TODO continue updating diff layout support
     // add flip/rotate buttons for specific layouts
     
